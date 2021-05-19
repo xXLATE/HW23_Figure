@@ -4,47 +4,49 @@ using System.Windows.Forms;
 
 namespace FormFigure
 {
-    public partial class Form1 : Form
+    public partial class DarkPaint : Form
     {
         protected int X1;
         protected int Y1;
         protected string Figure = "line";
 
-        public Form1()
+        public DarkPaint()
         {
             InitializeComponent();
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            this.canvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseDown);
+            this.canvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseUp);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void controlPanel_Enter(object sender, EventArgs e)
+        { }
+
+        private void lineBtn_Click(object sender, EventArgs e)
         {
             Figure = "line";
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void rectangleBtn_Click(object sender, EventArgs e)
         {
             Figure = "rectangle";
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void circleBtn_Click(object sender, EventArgs e)
         {
             Figure = "circle";
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void triangleBtn_Click(object sender, EventArgs e)
         {
             Figure = "triangle";
         }
 
-        // CLEAR
-        private void button5_Click(object sender, EventArgs e)
+        private void clearBtn_Click(object sender, EventArgs e)
         {
-            var graphics = panel1.CreateGraphics();
+            var graphics = canvas.CreateGraphics();
             graphics.Clear(Color.Black);
         }
 
-        private void panel1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void canvas_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             Point mouseDownLocation = new Point(e.X, e.Y);
 
@@ -52,11 +54,11 @@ namespace FormFigure
             Y1 = mouseDownLocation.Y;
         }
 
-        private void panel1_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void canvas_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             Point mouseDownLocation = new Point(e.X, e.Y);
 
-            var graphics = panel1.CreateGraphics();
+            var graphics = canvas.CreateGraphics();
             var pen = new Pen(Color.White, 10);
 
             int X2 = mouseDownLocation.X;

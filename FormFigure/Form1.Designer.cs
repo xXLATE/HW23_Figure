@@ -1,7 +1,7 @@
 ﻿
 namespace FormFigure
 {
-    partial class Form1
+    partial class DarkPaint
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -29,137 +29,137 @@ namespace FormFigure
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.controlPanel = new System.Windows.Forms.GroupBox();
+            this.clearBtn = new System.Windows.Forms.Button();
+            this.figurePanel = new System.Windows.Forms.GroupBox();
+            this.triangleBtn = new System.Windows.Forms.Button();
+            this.circleBtn = new System.Windows.Forms.Button();
+            this.rectangleBtn = new System.Windows.Forms.Button();
+            this.lineBtn = new System.Windows.Forms.Button();
+            this.canvas = new System.Windows.Forms.Panel();
+            this.controlPanel.SuspendLayout();
+            this.figurePanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // controlPanel
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(800, 99);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.controlPanel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.controlPanel.Controls.Add(this.clearBtn);
+            this.controlPanel.Controls.Add(this.figurePanel);
+            this.controlPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.controlPanel.Location = new System.Drawing.Point(0, 0);
+            this.controlPanel.Name = "controlPanel";
+            this.controlPanel.Size = new System.Drawing.Size(800, 99);
+            this.controlPanel.TabIndex = 0;
+            this.controlPanel.TabStop = false;
+            this.controlPanel.Enter += new System.EventHandler(this.controlPanel_Enter);
             // 
-            // button5
+            // clearBtn
             // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button5.Location = new System.Drawing.Point(337, 27);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Clear";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.clearBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.clearBtn.Location = new System.Drawing.Point(337, 27);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(75, 23);
+            this.clearBtn.TabIndex = 1;
+            this.clearBtn.Text = "Clear";
+            this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
-            // groupBox2
+            // figurePanel
             // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.groupBox2.Location = new System.Drawing.Point(6, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(311, 81);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Figures";
+            this.figurePanel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.figurePanel.Controls.Add(this.triangleBtn);
+            this.figurePanel.Controls.Add(this.circleBtn);
+            this.figurePanel.Controls.Add(this.rectangleBtn);
+            this.figurePanel.Controls.Add(this.lineBtn);
+            this.figurePanel.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.figurePanel.Location = new System.Drawing.Point(6, 12);
+            this.figurePanel.Name = "figurePanel";
+            this.figurePanel.Size = new System.Drawing.Size(311, 81);
+            this.figurePanel.TabIndex = 0;
+            this.figurePanel.TabStop = false;
+            this.figurePanel.Text = "Figures";
             // 
-            // button4
+            // triangleBtn
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Image = global::FormFigure.Properties.Resources.triangle;
-            this.button4.Location = new System.Drawing.Point(237, 15);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(60, 60);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.triangleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.triangleBtn.Image = global::FormFigure.Properties.Resources.triangle;
+            this.triangleBtn.Location = new System.Drawing.Point(237, 15);
+            this.triangleBtn.Name = "triangleBtn";
+            this.triangleBtn.Size = new System.Drawing.Size(60, 60);
+            this.triangleBtn.TabIndex = 3;
+            this.triangleBtn.UseVisualStyleBackColor = true;
+            this.triangleBtn.Click += new System.EventHandler(this.triangleBtn_Click);
             // 
-            // button3
+            // circleBtn
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Image = global::FormFigure.Properties.Resources.circle;
-            this.button3.Location = new System.Drawing.Point(160, 15);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(60, 60);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.circleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.circleBtn.Image = global::FormFigure.Properties.Resources.circle;
+            this.circleBtn.Location = new System.Drawing.Point(160, 15);
+            this.circleBtn.Name = "circleBtn";
+            this.circleBtn.Size = new System.Drawing.Size(60, 60);
+            this.circleBtn.TabIndex = 2;
+            this.circleBtn.UseVisualStyleBackColor = true;
+            this.circleBtn.Click += new System.EventHandler(this.circleBtn_Click);
             // 
-            // button2
+            // rectangleBtn
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Image = global::FormFigure.Properties.Resources.rectangle;
-            this.button2.Location = new System.Drawing.Point(83, 15);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 60);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.rectangleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rectangleBtn.Image = global::FormFigure.Properties.Resources.rectangle;
+            this.rectangleBtn.Location = new System.Drawing.Point(83, 15);
+            this.rectangleBtn.Name = "rectangleBtn";
+            this.rectangleBtn.Size = new System.Drawing.Size(60, 60);
+            this.rectangleBtn.TabIndex = 1;
+            this.rectangleBtn.UseVisualStyleBackColor = true;
+            this.rectangleBtn.Click += new System.EventHandler(this.rectangleBtn_Click);
             // 
-            // button1
+            // lineBtn
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Image = global::FormFigure.Properties.Resources.line;
-            this.button1.Location = new System.Drawing.Point(8, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 60);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.lineBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lineBtn.Image = global::FormFigure.Properties.Resources.line;
+            this.lineBtn.Location = new System.Drawing.Point(8, 15);
+            this.lineBtn.Name = "lineBtn";
+            this.lineBtn.Size = new System.Drawing.Size(60, 60);
+            this.lineBtn.TabIndex = 0;
+            this.lineBtn.UseVisualStyleBackColor = true;
+            this.lineBtn.Click += new System.EventHandler(this.lineBtn_Click);
             // 
-            // panel1
+            // canvas
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Desktop;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 99);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 351);
-            this.panel1.TabIndex = 1;
+            this.canvas.BackColor = System.Drawing.SystemColors.Desktop;
+            this.canvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.canvas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.canvas.Location = new System.Drawing.Point(0, 99);
+            this.canvas.Name = "canvas";
+            this.canvas.Size = new System.Drawing.Size(800, 351);
+            this.canvas.TabIndex = 1;
             // 
-            // Form1
+            // DarkPaint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            this.Controls.Add(this.canvas);
+            this.Controls.Add(this.controlPanel);
+            this.Name = "DarkPaint";
+            this.Text = "Dark Paint";
+            this.controlPanel.ResumeLayout(false);
+            this.figurePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.GroupBox controlPanel;
+        private System.Windows.Forms.Panel canvas;
+        private System.Windows.Forms.GroupBox figurePanel;
+        private System.Windows.Forms.Button lineBtn;
+        private System.Windows.Forms.Button triangleBtn;
+        private System.Windows.Forms.Button circleBtn;
+        private System.Windows.Forms.Button rectangleBtn;
+        private System.Windows.Forms.Button clearBtn;
     }
 }
 
