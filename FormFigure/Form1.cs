@@ -9,6 +9,8 @@ namespace FormFigure
         protected int X1;
         protected int Y1;
         protected string Figure = "line";
+        protected int thickness;
+        protected Color figureColor = Color.White;
 
         public DarkPaint()
         {
@@ -46,6 +48,20 @@ namespace FormFigure
             graphics.Clear(Color.Black);
         }
 
+        private void thickBar_Scroll(object sender, EventArgs e)
+        {
+            thickness = thickBar.Value;
+        }
+
+        private void chooseColorBtn_Click(object sender, EventArgs e)
+        {
+            if (colorDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                chooseColorBtn.BackColor = colorDialog.Color;
+                figureColor = colorDialog.Color;
+            }
+        }
+
         private void canvas_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             Point mouseDownLocation = new Point(e.X, e.Y);
@@ -59,7 +75,7 @@ namespace FormFigure
             Point mouseDownLocation = new Point(e.X, e.Y);
 
             var graphics = canvas.CreateGraphics();
-            var pen = new Pen(Color.White, 10);
+            var pen = new Pen(figureColor, thickness);
 
             int X2 = mouseDownLocation.X;
             int Y2 = mouseDownLocation.Y;

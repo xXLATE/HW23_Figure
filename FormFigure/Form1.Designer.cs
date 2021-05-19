@@ -30,6 +30,8 @@ namespace FormFigure
         private void InitializeComponent()
         {
             this.controlPanel = new System.Windows.Forms.GroupBox();
+            this.chooseColorBtn = new System.Windows.Forms.Button();
+            this.thickBar = new System.Windows.Forms.TrackBar();
             this.clearBtn = new System.Windows.Forms.Button();
             this.figurePanel = new System.Windows.Forms.GroupBox();
             this.triangleBtn = new System.Windows.Forms.Button();
@@ -37,13 +39,17 @@ namespace FormFigure
             this.rectangleBtn = new System.Windows.Forms.Button();
             this.lineBtn = new System.Windows.Forms.Button();
             this.canvas = new System.Windows.Forms.Panel();
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.controlPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.thickBar)).BeginInit();
             this.figurePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // controlPanel
             // 
             this.controlPanel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.controlPanel.Controls.Add(this.chooseColorBtn);
+            this.controlPanel.Controls.Add(this.thickBar);
             this.controlPanel.Controls.Add(this.clearBtn);
             this.controlPanel.Controls.Add(this.figurePanel);
             this.controlPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -53,6 +59,25 @@ namespace FormFigure
             this.controlPanel.TabIndex = 0;
             this.controlPanel.TabStop = false;
             this.controlPanel.Enter += new System.EventHandler(this.controlPanel_Enter);
+            // 
+            // chooseColorBtn
+            // 
+            this.chooseColorBtn.Location = new System.Drawing.Point(571, 27);
+            this.chooseColorBtn.Name = "chooseColorBtn";
+            this.chooseColorBtn.Size = new System.Drawing.Size(75, 23);
+            this.chooseColorBtn.TabIndex = 3;
+            this.chooseColorBtn.UseVisualStyleBackColor = true;
+            this.chooseColorBtn.Click += new System.EventHandler(this.chooseColorBtn_Click);
+            // 
+            // thickBar
+            // 
+            this.thickBar.Location = new System.Drawing.Point(431, 27);
+            this.thickBar.Minimum = 1;
+            this.thickBar.Name = "thickBar";
+            this.thickBar.Size = new System.Drawing.Size(104, 45);
+            this.thickBar.TabIndex = 2;
+            this.thickBar.Value = 1;
+            this.thickBar.Scroll += new System.EventHandler(this.thickBar_Scroll);
             // 
             // clearBtn
             // 
@@ -145,6 +170,8 @@ namespace FormFigure
             this.Name = "DarkPaint";
             this.Text = "Dark Paint";
             this.controlPanel.ResumeLayout(false);
+            this.controlPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.thickBar)).EndInit();
             this.figurePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -160,6 +187,9 @@ namespace FormFigure
         private System.Windows.Forms.Button circleBtn;
         private System.Windows.Forms.Button rectangleBtn;
         private System.Windows.Forms.Button clearBtn;
+        private System.Windows.Forms.TrackBar thickBar;
+        private System.Windows.Forms.Button chooseColorBtn;
+        private System.Windows.Forms.ColorDialog colorDialog;
     }
 }
 
