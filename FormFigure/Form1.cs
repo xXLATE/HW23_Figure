@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FormFigure
 {
     public partial class Form1 : Form
     {
-
         protected int X1;
         protected int Y1;
         protected string Figure = "line";
@@ -22,11 +15,6 @@ namespace FormFigure
             InitializeComponent();
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,118 +58,32 @@ namespace FormFigure
 
             var graphics = panel1.CreateGraphics();
             var pen = new Pen(Color.White, 10);
+
+            int X2 = mouseDownLocation.X;
+            int Y2 = mouseDownLocation.Y;
+
             if (Figure == "line")
             {
-                graphics.DrawLine(pen, X1, Y1, mouseDownLocation.X, mouseDownLocation.Y);
+                Figure line = new Segment(graphics, pen, X1, Y1, X2, Y2);
+                line.Draw(graphics, pen, X1, Y1, X2, Y2);
             }
 
             else if (Figure == "rectangle")
             {
-                if (X1 < mouseDownLocation.X)
-                {
-                    if (Y1 < mouseDownLocation.Y)
-                        graphics.DrawRectangle(pen, X1, Y1, Math.Abs(mouseDownLocation.X - X1), Math.Abs(mouseDownLocation.Y - Y1));
-                    else if (Y1 > mouseDownLocation.Y)
-                        graphics.DrawRectangle(pen, X1, mouseDownLocation.Y, Math.Abs(mouseDownLocation.X - X1), Math.Abs(mouseDownLocation.Y - Y1));
-                }
-                else if (X1 > mouseDownLocation.X)
-                {
-                    if (Y1 > mouseDownLocation.Y)
-                        graphics.DrawRectangle(pen, mouseDownLocation.X, mouseDownLocation.Y, Math.Abs(mouseDownLocation.X - X1), Math.Abs(mouseDownLocation.Y - Y1));
-                    else if (Y1 < mouseDownLocation.Y)
-                        graphics.DrawRectangle(pen, mouseDownLocation.X, Y1, Math.Abs(mouseDownLocation.X - X1), Math.Abs(mouseDownLocation.Y - Y1));
-                }
+                Figure rectangle = new Rectangle(graphics, pen, X1, Y1, X2, Y2);
+                rectangle.Draw(graphics, pen, X1, Y1, X2, Y2);
             }
 
             else if (Figure == "circle")
             {
-                if (X1 < mouseDownLocation.X)
-                {
-                    if (Y1 < mouseDownLocation.Y)
-                        graphics.DrawEllipse(pen, X1, Y1, Math.Abs(mouseDownLocation.X - X1), Math.Abs(mouseDownLocation.Y - Y1));
-                    else if (Y1 > mouseDownLocation.Y)
-                        graphics.DrawEllipse(pen, X1, mouseDownLocation.Y, Math.Abs(mouseDownLocation.X - X1), Math.Abs(mouseDownLocation.Y - Y1));
-                }
-                else if (X1 > mouseDownLocation.X)
-                {
-                    if (Y1 > mouseDownLocation.Y)
-                        graphics.DrawEllipse(pen, mouseDownLocation.X, mouseDownLocation.Y, Math.Abs(mouseDownLocation.X - X1), Math.Abs(mouseDownLocation.Y - Y1));
-                    else if (Y1 < mouseDownLocation.Y)
-                        graphics.DrawEllipse(pen, mouseDownLocation.X, Y1, Math.Abs(mouseDownLocation.X - X1), Math.Abs(mouseDownLocation.Y - Y1));
-                }
+                Figure circle = new Circle(graphics, pen, X1, Y1, X2, Y2);
+                circle.Draw(graphics, pen, X1, Y1, X2, Y2);
             }
 
             else if (Figure == "triangle")
             {
-                if (X1 < mouseDownLocation.X)
-                {
-                    if (Y1 < mouseDownLocation.Y)
-                    {
-                        Point point1 = new Point(Math.Abs(mouseDownLocation.X + X1) / 2, Y1);
-                        Point point2 = new Point(X1, mouseDownLocation.Y);
-                        Point point3 = new Point(mouseDownLocation.X, mouseDownLocation.Y);
-
-                        Point[] curvePoints =
-                        {
-                             point1,
-                             point2,
-                             point3
-                        };
-
-                        graphics.DrawPolygon(pen, curvePoints);
-                    }
-
-                    else if (Y1 > mouseDownLocation.Y)
-                    {
-                        Point point1 = new Point(Math.Abs(mouseDownLocation.X + X1) / 2, mouseDownLocation.Y);
-                        Point point2 = new Point(X1, Y1);
-                        Point point3 = new Point(mouseDownLocation.X, Y1);
-
-                        Point[] curvePoints =
-                        {
-                             point1,
-                             point2,
-                             point3
-                        };
-
-                        graphics.DrawPolygon(pen, curvePoints);
-                    }
-                }
-
-                else
-                {
-                    if (Y1 > mouseDownLocation.Y)
-                    {
-                        Point point1 = new Point(Math.Abs(mouseDownLocation.X + X1) / 2, mouseDownLocation.Y);
-                        Point point2 = new Point(mouseDownLocation.X, Y1);
-                        Point point3 = new Point(X1, Y1);
-
-                        Point[] curvePoints =
-                        {
-                             point1,
-                             point2,
-                             point3
-                        };
-
-                        graphics.DrawPolygon(pen, curvePoints);
-                    }
-
-                    else if (Y1 < mouseDownLocation.Y)
-                    {
-                        Point point1 = new Point(Math.Abs(mouseDownLocation.X + X1) / 2, Y1);
-                        Point point2 = new Point(mouseDownLocation.X, mouseDownLocation.Y);
-                        Point point3 = new Point(X1, mouseDownLocation.Y);
-
-                        Point[] curvePoints =
-                        {
-                             point1,
-                             point2,
-                             point3
-                        };
-
-                        graphics.DrawPolygon(pen, curvePoints);
-                    }
-                }
+                Figure triangle = new Triangle(graphics, pen, X1, Y1, X2, Y2);
+                triangle.Draw(graphics, pen, X1, Y1, X2, Y2);
             }
         }
     }

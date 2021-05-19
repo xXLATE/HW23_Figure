@@ -31,6 +31,11 @@ class Figure
         startX = newX;
         startY = newY;
     }
+
+    public virtual string Draw()
+    {
+        return null;
+    }
 }
 
 class Circle : Figure
@@ -42,7 +47,7 @@ class Circle : Figure
         radius = R;
     }
 
-    public string Draw()
+    public override string Draw()
     {
         return $"Circle:\nradius = {radius}\nstarting point = ({startX}, {startY})\n";
     }
@@ -59,7 +64,7 @@ class Segment : Figure
         y2 = Y2;
     }
 
-    public string Draw()
+    public override string Draw()
     {
         return $"Segment:\nstarting point = ({startX}, {startY})\nending point = ({x2}, {y2})\n";
     }
@@ -76,7 +81,7 @@ class Rectangle : Figure
         height = newH;
     }
 
-    public string Draw()
+    public override string Draw()
     {
         return $"Rectangle:\nwidth = {width}\nheight = {height}\nstarting point = ({startX}, {startY})\n";
     }
@@ -95,7 +100,7 @@ class Triangle : Figure
         y3 = Y3;
     }
 
-    public string Draw()
+    public override string Draw()
     {
         return $"Triangle:\nvertex 1 = ({startX}, {startY})\nvertex 2 = ({x2}, {y2})\nvertex 3 = ({x3}, {y3})\n";
     }
